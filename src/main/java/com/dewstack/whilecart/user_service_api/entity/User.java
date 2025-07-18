@@ -1,8 +1,6 @@
 package com.dewstack.whilecart.user_service_api.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,4 +23,7 @@ public class User {
     private String lastName;
     @Column(name = "last-name")
     private String otp;
+    @OneToOne
+    @JoinColumn(name = "user-avatar-id")
+    private UserAvatar userAvatar;
 }
