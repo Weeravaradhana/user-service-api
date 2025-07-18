@@ -6,24 +6,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "user")
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "user")
 public class User {
     @Id
-    @Column(name = "user-id",unique = true,nullable = false,length = 80)
+    @Column(name = "user_id",unique = true,nullable = false,length = 80)
     private String userId;
-    @Column(name = "user-name",unique = true,nullable = false)
+    @Column(name = "user_name",unique = true,nullable = false)
     private String userName;
-    @Column(name = "first-name",nullable = false)
+    @Column(name = "first_name",nullable = false)
     private String firstName;
-    @Column(name = "last-name",nullable = false)
+    @Column(name = "last_name",nullable = false)
     private String lastName;
-    @Column(name = "last-name")
-    private String otp;
-    @OneToOne
-    @JoinColumn(name = "user-avatar-id")
+    @Column(name = "last_name")
+    private int otp;
+    @OneToOne(mappedBy = "user")
     private UserAvatar userAvatar;
 }
