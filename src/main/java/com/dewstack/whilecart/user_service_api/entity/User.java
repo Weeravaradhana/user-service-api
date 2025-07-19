@@ -22,7 +22,7 @@ public class User {
     private String firstName;
     @Column(name = "last_name",nullable = false)
     private String lastName;
-    @Column(name = "last_name")
+    @Column(name = "otp")
     private int otp;
     @OneToOne(mappedBy = "user")
     private UserAvatar userAvatar;
