@@ -115,21 +115,6 @@ public class UserController {
 
     }
 
-    @GetMapping("/admin/list")
-    @PreAuthorize("hasRole('admin')")
-    public ResponseEntity<StandardResponse> getAllUsers(
-            @RequestParam String searchText,
-            @RequestParam int page,
-            @RequestParam int size
-    ) {
-        return new ResponseEntity<>(
-                new StandardResponse(200,
-                        "Users List!", userService.findUsersPaginate(searchText, page, size)),
-                HttpStatus.OK
-        );
-    }
-
-
     @GetMapping("/user/get-user-id")
     @PreAuthorize("hasRole('user')")
     public StandardResponse getUserId(
