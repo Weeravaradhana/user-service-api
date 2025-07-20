@@ -1,16 +1,14 @@
 package com.dewstack.whilecart.user_service_api.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity(name = "user-avatar")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UserAvatar {
     @Id
     @Column(name = "avatar-id",unique = true,nullable = false,length = 80)
