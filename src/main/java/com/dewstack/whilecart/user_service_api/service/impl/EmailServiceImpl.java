@@ -1,6 +1,7 @@
 package com.dewstack.whilecart.user_service_api.service.impl;
 
 
+
 import com.dewstack.whilecart.user_service_api.service.EmailService;
 import com.dewstack.whilecart.user_service_api.util.EmailTemplateHelper;
 import com.sendgrid.Method;
@@ -11,6 +12,7 @@ import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,7 @@ import java.time.Year;
 @RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
 
+
     private final EmailTemplateHelper emailTemplateHelper;
 
     @Value("${fromEmail}")
@@ -28,6 +31,7 @@ public class EmailServiceImpl implements EmailService {
 
     @Value("${emailKey}")
     private String apiKey;
+
 
     @Override
     public boolean sendUserSignupVerificationCode(String toEmail, String subject, String otp) throws IOException {

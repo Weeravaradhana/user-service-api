@@ -1,5 +1,6 @@
 package com.dewstack.whilecart.user_service_api.util;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 

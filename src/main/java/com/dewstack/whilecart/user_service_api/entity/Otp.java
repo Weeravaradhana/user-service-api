@@ -27,6 +27,6 @@ public class Otp {
     @Column(name = "attempts", nullable = false)
     private Integer attempts;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_property_id", referencedColumnName = "property_id", nullable = false)
+    @JoinColumn(name = "user_property_id", referencedColumnName = "user_id", nullable = false)
     private User systemUser;
 }
